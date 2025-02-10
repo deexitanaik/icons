@@ -1,18 +1,24 @@
 
 import React from "react";
+import CategoryCard from "./CategoryCard";
+import weddingIcon from "../assets/wedding.png"; // Repl
 
-const CategoryCard = ({ icon, label, selected }) => {
+const categories = [
+  { icon: hotelIcon, label: "Hotels" },
+  { icon: weddingIcon, label: "Wedding Planning", selected: true },
+  { icon: "../assets/restaurant.png", label: "Restaurants" },
+  { icon: "../assets/education.png", label: "Education" },
+  { icon: "../assets/gym.png", label: "Gym" },
+];
+
+const CategoryGrid = () => {
   return (
-    <div
-      className={`flex flex-col items-center justify-center w-24 h-24 p-4 rounded-xl shadow-md 
-      transition-transform duration-300 ${
-        selected ? "border-2 border-pink-500 scale-105" : "hover:scale-105"
-      }`}
-    >
-      <img src={icon} alt={label} className="w-10 h-10" />
-      <p className="mt-2 text-sm text-gray-700">{label}</p>
+    <div className="grid grid-cols-5 gap-4 p-6">
+      {categories.map((cat, index) => (
+        <CategoryCard key={index} {...cat} />
+      ))}
     </div>
   );
 };
 
-export default CategoryCard;
+export default CategoryGrid;

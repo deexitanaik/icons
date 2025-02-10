@@ -1,7 +1,7 @@
 
 import React from "react";
 import CategoryCard from "../components/CategoryCard";
-import weddingIcon from "../assets/wedding.png";
+
 
 export default {
   title: "Components/CategoryCard",
